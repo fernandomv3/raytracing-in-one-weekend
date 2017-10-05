@@ -71,6 +71,10 @@ inline float dot(const vec3& v1, const vec3& v2){
   return v1.e[0] * v2.e[0] + v1.e[1] * v2.e[1] + v1.e[2] * v2.e[2];
 }
 
+inline vec3 reflect(const vec3& v, const vec3& n){
+  return v - 2*dot(v,n)*n;
+}
+
 inline vec3 cross(const vec3& v1, const vec3& v2){
   return vec3((v1.e[1]*v2.e[2] - v1.e[2]*v2.e[1]),
              -(v1.e[0]*v2.e[2] - v1.e[2]*v2.e[0]),
